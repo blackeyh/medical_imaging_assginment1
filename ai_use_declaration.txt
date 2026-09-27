@@ -1,0 +1,66 @@
+AI USE DECLARATION
+ENG 2440 Assignment 1: Pneumonia Classification Challenge
+Student: Mohamed Farrag (25011143)
+
+I am responsible for every result and written claim in this submission. Below is each AI tool I used, what I used it for, the interaction record, and the parts of the submission affected.
+
+----------------------------------------------------------------------
+1. Claude (Anthropic), via claude.ai
+----------------------------------------------------------------------
+Interaction record: full chat shared at https://claude.ai/share/31e0e95e-9ba9-42df-b73c-bcb4c443f86a
+
+Purpose:
+- Explanations of concepts (pandas groupby/merge/iloc, patient-level leakage, GroupShuffleSplit, DICOM tags, PyTorch Dataset/DataLoader, BCE loss and pos_weight, standardisation, ROC vs PR, thresholds, calibration, BatchNorm freezing, Grad-CAM).
+- Debugging errors after I had attempted the code, and reviewing code I wrote.
+- Short example code that I typed, adapted, tested and can explain.
+- A notes document recording results and findings while working.
+- Feedback on the accuracy, completeness, spelling and grammar of report text that I wrote.
+- Formatting the report in LaTeX, and writing the README and .gitignore.
+
+Affected parts of the notebook (25011143_ENG2440_A1.ipynb):
+- Section A: explanations and toy examples for loading, collapsing labels (I chose .max()) and merging the mapping; example code for the DICOM path column, the metadata loop, the example-image grid and the count of unique NIH patients / class counts.
+- Section B: explanation of GroupShuffleSplit; debugging of a groups-length error. I wrote the two-stage split and the assertions.
+- Section C: example code for the preprocessing function (load_image), the CRDataset class, the augmentation transform and the before/after panel, and the image-caching check. CachedDataset and the DataLoaders were written with help from Google AI Overview (see section 2).
+- Section D: hints and concept explanations only; Claude reviewed my code and pointed out bugs (scaler, stale predictions, unconverged loss, unequal epochs in the weighted/unweighted comparison). I wrote the feature function, training loop, weighting and evaluation.
+- Sections E-G: a step-by-step plan, explanation of the BatchNorm eval/train handling and review of my code; interpretation of results was discussed with Claude.
+
+Affected parts of the report (PDF):
+- All sections: Claude gave feedback on accuracy and completeness; I rewrote my own text in response. Claude then applied only spelling and grammar corrections, a few one-word terminology/number fixes and several edits I explicitly requested (e.g. correcting threshold test numbers from the notebook, epochs 6 to 5, adding a Captum sentence, filling Section A counts and class names). A full list of these corrections is kept in my notes.
+- Tables: results tables were inserted from my notebook outputs; table titles were written by Claude.
+- Figure captions: written by Claude (short descriptive captions only).
+- Citations: Claude inserted citation numbers into my existing sentences; I compiled and verified the reference list myself.
+- LaTeX: conversion of my text to LaTeX, figure placement, font size and moving tables/figures to the appendix.
+- Interpretations in sections E-G were discussed with Claude; all report sentences are my own wording.
+
+Other files: README.md and .gitignore were written by Claude and checked by me. This declaration was drafted by Claude from my running AI-use log and checked and completed by me.
+
+----------------------------------------------------------------------
+2. Google AI Overview (AI summaries in Google Search)
+----------------------------------------------------------------------
+Interaction record: no export available, and I do not remember the exact search queries.
+
+Purpose and affected parts (notebook):
+- Data pipeline: the CachedDataset class and the DataLoaders (Section C/E).
+- Baseline: parts of the baseline code, including the fair weighted/unweighted rerun cell (Sections C/D).
+- CNN fine-tuning, especially Stage 2 (unfreezing layer4, the new optimizer and the training loop), and the training helper functions (Section E).
+- CNN evaluation code (Sections E/F).
+- Recommendations of tutorials, blogs, documentation pages and references to learn from. For the report, I kept only sources I opened and actually used.
+
+----------------------------------------------------------------------
+3. Claude Code (Anthropic)
+----------------------------------------------------------------------
+Purpose: committing and pushing the notebook, README, requirements and .gitignore to GitHub (this is why the commit lists Claude as co-author). It did not write or change the code.
+
+----------------------------------------------------------------------
+4. ChatGPT (OpenAI)
+----------------------------------------------------------------------
+Interaction record: No share link or export available.
+
+Purpose: ChatGPT gave me example code, and when I struggled, it gave hints on how to adapt that code to my project. I adapted, tested and can explain the resulting code.
+
+Affected parts: The Grad-CAM code (Section G) definitely. I also used it for other parts of the notebook, but I cannot recall exactly which ones.
+
+----------------------------------------------------------------------
+Non-AI sources
+----------------------------------------------------------------------
+Code adapted from documentation (Captum LayerGradCam example, PyTorch transfer-learning tutorial) is cited in the report. I found Captum through a Stack Overflow post.
