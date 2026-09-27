@@ -1,0 +1,9 @@
+data/
+*.csv
+*.npy
+*.npz
+*.pt
+*.pth
+*.png
+.DS_Store
+.ipynb_checkpoints/
